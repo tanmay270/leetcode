@@ -1,0 +1,23 @@
+//leetcode 287
+//find the duplicate
+class Solution {
+    public int findDuplicate(int[] nums) {
+        //start a fast and slow pointer 
+        // until they met
+        int slow=0,fast=0;
+        do{
+            slow=nums[slow];
+            fast=nums[nums[fast]];
+
+        }while (slow != fast);
+        slow=0;
+        while (slow !=fast){
+            slow=nums[slow];
+            fast=nums[fast];
+        }
+        return slow;
+
+        
+    }
+
+}
